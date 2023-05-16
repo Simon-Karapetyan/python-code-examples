@@ -47,7 +47,7 @@ print(area) # 15
 print(perimeter) # 16
 
 
-Inheritance
+# Inheritance
 class Animal:
     def __init__(self, name):
         self.name = name
