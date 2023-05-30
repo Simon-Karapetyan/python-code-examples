@@ -10,63 +10,85 @@ for fruit in fruits:
 
 
 
+
 i = 0
 while i < 10:
     print(i)
     i += 1
 
 
+
+
 def print_arguments(*args, **kwargs):
     print("Positional arguments:")
     for arg in args:
         print(arg)
-
     print("Keyword arguments:")
     for key, value in kwargs.items():
         print(key, ":", value)
-
 print_arguments("apple", "banana", "cherry", color="red", taste="sweet")
+
+
+
 
 
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-
     def area(self):
         return self.width * self.height
-
     def perimeter(self):
         return 2 * (self.width + self.height)
 
 rect = Rectangle(5, 3)
 area = rect.area()
 perimeter = rect.perimeter()
-
 print(area) # 15
 print(perimeter) # 16
+
+
 
 
 # Inheritance
 class Animal:
     def __init__(self, name):
         self.name = name
-
     def speak(self):
         print("The animal makes a sound.")
-
 
 class Dog(Animal):
     def __init__(self, name, breed):
         super().__init__(name)
         self.breed = breed
-
     def speak(self):
         print("The dog barks: Woof!")
-
     def fetch(self):
         print("The dog fetches a ball.")
 
-
 from functions import get_date
 print(get_date())
+
+
+
+
+
+
+
+def uppercase_decorator(func):
+    def wrapper(*args, **kwargs):
+        # Call the decorated function
+        result = func(*args, **kwargs)
+        # Convert the result to uppercase
+        return result.upper()
+    return wrapper
+
+@uppercase_decorator
+def say_hello(name):
+    return f"Hello, {name}!"
+@uppercase_decorator
+def concatenate_strings(a, b):
+    return a + b
+# Example usage
+print(say_hello("Alice"))  # Output: HELLO, ALICE!
+print(concatenate_strings("Hello", "World"))  # Output: HELLOWORLD
