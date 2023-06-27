@@ -85,10 +85,39 @@ def uppercase_decorator(func):
 
 @uppercase_decorator
 def say_hello(name):
-    return f"Hello, {name}!"
+    print("Hello, {name}!")
 @uppercase_decorator
 def concatenate_strings(a, b):
     return a + b
 # Example usage
 print(say_hello("Alice"))  # Output: HELLO, ALICE!
 print(concatenate_strings("Hello", "World"))  # Output: HELLOWORLD
+
+
+
+
+
+
+
+
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print("Executed {func.__name__} in {execution_time:.4f} seconds")
+        return result
+    return wrapper
+
+@timer
+def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+factorial_result = calculate_factorial(10)
+print("Factorial of 10: {factorial_result}")
