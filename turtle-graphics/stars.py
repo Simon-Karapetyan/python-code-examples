@@ -1,7 +1,7 @@
 import turtle
 
 stars = turtle.Turtle()
-stars.speed(50)
+stars.speed(40)
 stars.getscreen().bgcolor("black")
 stars.color("white")
 
