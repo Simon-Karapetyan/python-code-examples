@@ -24,3 +24,18 @@ import numpy as np
 
 # Subtract the mean from each column
 # x_centered = x - x_mean
+
+
+
+# a = np.array([[1, 2, 3], [4, 5, 6]])
+# b = np.array([[7, 8, 9], [10, 11, 12]])
+# print(a + b) # Output: array([[ 8, 10, 12], [14, 16, 18]])
+# print(a - b) # Output: array([[-6, -6, -6], [-6, -6, -6]])
+# a and b can not be multiplied because they have different shapes
+
+
+# a = np.array([[2, 3], [4, 5]])
+# b = np.array([[6, 7], [8, 9]])
+# print(a * b)  # Output: array([[12, 21], [32, 45]])
+# print(np.dot(a, b))  # Output: array([[36, 41], [64, 73]])
+# Notice that the a * b and np.dot(a, b) are different
